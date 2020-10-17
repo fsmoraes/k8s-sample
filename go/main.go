@@ -11,7 +11,7 @@ func greeting(message string) string {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "%s", greeting("Code.education Rocks!"))
+	fmt.Fprintf(w, "%s", greeting("Code.education Rocks!!!"))
 }
 
 func main() {
