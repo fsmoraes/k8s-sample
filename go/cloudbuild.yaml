@@ -15,8 +15,8 @@ steps:
       - 'build'
       - '-t'
       - 'gcr.io/$PROJECT_ID/$REPO_NAME:$SHORT_SHA'
-      # - '-f'
-      # - './src/Dockerfile'
+      - '-f'
+      - './go/Dockerfile'
       - '.'
 
   - name: 'docker'
