@@ -19,13 +19,12 @@ spec: # spec do deployment
             containers:
                 - image: mysql:8.0
                   name: mysql-server
-                  args:
-                    - "--ignore-db-dir=lost+found" #necessário para não dar erro na cloud
-
                   env:
                     - name: MYSQL_ROOT_PASSWORD
-                      value: root
-
+                      valueFrom:
+                        secretKeyRef:
+                            name: mysql-pass
+                            key: password
                   ports:
                     - containerPort: 3306
 
