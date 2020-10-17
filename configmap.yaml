@@ -1,0 +1,28 @@
+# /usr/share/nginx/html
+apiVersion: v1
+kind: ConfigMap
+metadata:
+    name: nginx-conf
+data:
+    
+    nginx.index: |
+    
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Code.education Rocks!</title>
+        </head>
+        <body>
+        <h1>Code.education Rocks!</h1>
+        </body>
+        </html>
+
+    nginx.conf: |
+
+        server {
+            listen 80;
+            index index.php index.html;
+            root /usr/share/nginx/html;
+
+            rewrite ^/google$ http://google.com permanent;
+        }
