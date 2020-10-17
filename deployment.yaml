@@ -2,16 +2,16 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     name: hello-nginx
-spec:
+spec: ## spec do deployment
     replicas: 3
     selector:
         matchLabels:
             app: hello-nginx
-    template: ## Configurações do POD
+    template: ## configurações referente ao POD
         metadata:
             labels:
                 app: hello-nginx
-        spec:
+        spec: ## spec do POD
             containers:
                 - name: nginx
                   image: nginx:1.19-alpine
