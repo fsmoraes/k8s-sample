@@ -7,7 +7,7 @@ steps:
       - '.'
     env: 
       - 'PROJECT_ROOT=app'
-    dir: 'src'
+    dir: 'go'
 
   - name: 'gcr.io/cloud-builders/go'
     id: 'Tests'
@@ -16,7 +16,7 @@ steps:
       - '-v'
     env:
       - 'PROJECT_ROOT=app'
-    dir: 'src'
+    dir: 'go'
 
   - name: 'docker'
     id: 'Build'
