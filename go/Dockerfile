@@ -1,13 +1,13 @@
 FROM golang:alpine AS builder
 
-WORKDIR /go/src/app
+WORKDIR /go/src
 
-COPY /go /go/src/app
+COPY /src /go/src
 
-RUN go build -o /go/bin/hello
+RUN CGO_ENABLED=0 GOOS=linux go build -o ./out/go-app .
 
-FROM scratch
+FROM scratch 
 
-COPY --from=builder /go/bin/hello /go/bin/hello
+COPY --from=builder /go/src/out/go-app /app/go-app
 
-ENTRYPOINT ["/go/bin/hello"]
+ENTRYPOINT ["/app/go-app"]
