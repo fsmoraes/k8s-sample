@@ -6,5 +6,5 @@ steps:
       - 'test'
       - '-v'
     env:
-      - 'PROJECT_ROOT=src'
+      - 'PROJECT_ROOT=.'
     dir: 'go'
