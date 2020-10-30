@@ -7,4 +7,4 @@ steps:
       - '-v'
     env:
       - 'PROJECT_ROOT=.'
-    dir: 'go'
+    dir: 'go/src'
