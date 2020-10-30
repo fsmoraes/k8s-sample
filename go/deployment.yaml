@@ -1,0 +1,20 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+    name: hello-go-web
+spec: ## spec do deployment
+    selector:
+        matchLabels:
+            app: hello-go-web
+            
+    template: ## configurações referente ao POD
+        metadata:
+            labels:
+                app: hello-go-web
+        spec: ## spec do POD
+            containers:
+                - name: hello-go-web
+                  image: fsmoraes/go-web:4.0
+                  ports:
+                    - containerPort: 8000
+                    
