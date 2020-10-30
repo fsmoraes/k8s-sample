@@ -14,7 +14,7 @@ spec: ## spec do deployment
         spec: ## spec do POD
             containers:
                 - name: hello-go-web
-                  image: fsmoraes/go-web:3.0
+                  image: fsmoraes/go-web:4.0
                   ports:
                     - containerPort: 8000
                     

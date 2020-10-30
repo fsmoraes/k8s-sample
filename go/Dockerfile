@@ -4,10 +4,10 @@ WORKDIR /go/src
 
 COPY /src /go/src
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o ./out/go-app .
+RUN CGO_ENABLED=0 GOOS=linux go build -o /go/bin/go-app
 
 FROM scratch 
 
-COPY --from=builder /go/src/out/go-app /app/go-app
+COPY --from=builder /go/bin/go-app /go/bin/go-app
 
-ENTRYPOINT ["/app/go-app"]
+ENTRYPOINT ["/go/bin/go-app"]
